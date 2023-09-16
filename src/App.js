@@ -49,6 +49,7 @@ const App = () => {
 
   return (
     <>
+      <h2 className="title">Eat-n-Split</h2>
       <div className="app">
         <div className="sidebar">
           <FriendsList initialFriends={initialFriends} onSelect={handleSelectedFriend} selectedFrds={selectedFrd} />

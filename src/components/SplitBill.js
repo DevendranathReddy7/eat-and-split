@@ -9,24 +9,8 @@ const SplitBill = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-
         if (totalBill === '' || yourBill === '') return
-        // let detailedExpanses = {
-        //     totalBill,
-        //     yourBill, frdBill
-        // }
-
         props.onMsg(whoPaid === props.selectedFrds.name ? -yourBill : frdBill)
-        // if (yourBill > frdBill) {
-        //     props.onMsg(totalBill / 2 - yourBill)
-        // }
-        // else if (yourBill < frdBill) {
-        //     props.onMsg(totalBill / 2 - frdBill)
-
-        // } else {
-        //     props.onMsg(0)
-        // }
-
     }
     return (
         <div className="sidebar">

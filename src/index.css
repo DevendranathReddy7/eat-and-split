@@ -25,6 +25,17 @@ body {
   justify-content: center;
 }
 
+.title {
+  margin: 30px 30rem;
+  padding: 5px;
+  text-align: center;
+  background-color: #050405;
+  font-weight: bolder;
+  color: white;
+  width: 150px;
+  border-radius: 8px;
+}
+
 .app {
   min-height: 66vh;
   display: grid;
