@@ -20,6 +20,7 @@ const AddFriend = (props) => {
     }
 
     return (
+
         <form className="form-add-friend" onSubmit={submitHandle}>
             <label>🧑‍🤝‍🧑Name: </label>
             <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
@@ -27,6 +28,7 @@ const AddFriend = (props) => {
             <input type="text" value={image} onChange={(e) => setImage(e.target.value)} />
             <Button >Add</Button>
         </form>
+
     )
 }
 

@@ -33,6 +33,11 @@ body {
   align-items: start;
 }
 
+.sidebar {
+  display: grid;
+  justify-content: center;
+}
+
 .button {
   background-color: var(--color-medium);
   color: #343a40;
@@ -124,6 +129,8 @@ form {
 }
 
 .form-split-bill {
+  margin-top: 10rem;
+  width: 40rem;
   grid-template-columns: 1fr 12rem;
   padding: 3.2rem 1rem;
 }

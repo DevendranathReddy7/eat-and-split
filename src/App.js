@@ -54,9 +54,10 @@ const App = () => {
           <FriendsList initialFriends={initialFriends} onSelect={handleSelectedFriend} selectedFrds={selectedFrd} />
           {isOpen && <AddFriend onAddFriend={addedNewFriend} />}
           <Button onClick={showAddFriendHandle}>{isOpen ? 'Close' : 'Add Friend'}</Button>
-          {selectedFrd && <SplitBill selectedFrds={selectedFrd} onMsg={msgHandler} />}
         </div>
+        {selectedFrd && <SplitBill selectedFrds={selectedFrd} onMsg={msgHandler} />}
       </div>
+
     </>
   )
 }

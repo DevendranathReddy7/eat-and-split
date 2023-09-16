@@ -26,24 +26,27 @@ const SplitBill = (props) => {
 
     }
     return (
-        <form className="form-split-bill" onSubmit={handleSubmit}>
-            <h2>Split bill with {props.selectedFrds.name}</h2>
-            <label>Bill value</label>
-            <input type="text" value={totalBill} onChange={(e) => setTotalBill(e.target.value)}></input>
+        <div className="sidebar">
+            <form className="form-split-bill" onSubmit={handleSubmit}>
+                <h2>Split bill with {props.selectedFrds.name}</h2>
+                <label>Bill value</label>
+                <input type="text" value={totalBill} onChange={(e) => setTotalBill(e.target.value)}></input>
 
-            <label>Your expense</label>
-            <input type="text" value={yourBill} onChange={(e) => setYourBill(e.target.value)}></input>
+                <label>Your expense</label>
+                <input type="text" value={yourBill} onChange={(e) => setYourBill(e.target.value)}></input>
 
-            <label>{props.selectedFrds.name}'s expense</label>
-            <input type="text" value={frdBill} disabled></input>
+                <label>{props.selectedFrds.name}'s expense</label>
+                <input type="text" value={frdBill} disabled></input>
 
-            <label>Who paid the bill</label>
-            <select>
-                <option value='user'>You</option>
-                <option value='friend'>{props.selectedFrds.name}</option>
-            </select>
-            <Button >Split Bill</Button>
-        </form>
+                <label>Who paid the bill</label>
+                <select>
+                    <option value='user'>You</option>
+                    <option value='friend'>{props.selectedFrds.name}</option>
+                </select>
+                <Button >Split Bill</Button>
+            </form>
+        </div>
+
     )
 }
 
