@@ -4,6 +4,7 @@ import { useState } from "react"
 const SplitBill = (props) => {
     const [totalBill, setTotalBill] = useState(0)
     const [yourBill, setYourBill] = useState(0)
+    const [whoPaid, setWhoPaid] = useState('')
     const frdBill = totalBill ? totalBill - yourBill : ''
 
     const handleSubmit = (e) => {
@@ -14,15 +15,17 @@ const SplitBill = (props) => {
         //     totalBill,
         //     yourBill, frdBill
         // }
-        if (yourBill > frdBill) {
-            props.onMsg(totalBill / 2 - yourBill)
-        }
-        else if (yourBill < frdBill) {
-            props.onMsg(totalBill / 2 - frdBill)
 
-        } else {
-            props.onMsg(0)
-        }
+        props.onMsg(whoPaid === props.selectedFrds.name ? -yourBill : frdBill)
+        // if (yourBill > frdBill) {
+        //     props.onMsg(totalBill / 2 - yourBill)
+        // }
+        // else if (yourBill < frdBill) {
+        //     props.onMsg(totalBill / 2 - frdBill)
+
+        // } else {
+        //     props.onMsg(0)
+        // }
 
     }
     return (
@@ -39,9 +42,9 @@ const SplitBill = (props) => {
                 <input type="text" value={frdBill} disabled></input>
 
                 <label>Who paid the bill</label>
-                <select>
+                <select value={whoPaid} onChange={(e) => setWhoPaid(e.target.value)}>
                     <option value='user'>You</option>
-                    <option value='friend'>{props.selectedFrds.name}</option>
+                    <option value={props.selectedFrds.name}>{props.selectedFrds.name}</option>
                 </select>
                 <Button >Split Bill</Button>
             </form>
