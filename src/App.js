@@ -56,7 +56,7 @@ const App = () => {
           {isOpen && <AddFriend onAddFriend={addedNewFriend} />}
           <Button onClick={showAddFriendHandle}>{isOpen ? 'Close' : 'Add Friend'}</Button>
         </div>
-        {selectedFrd && <SplitBill selectedFrds={selectedFrd} onMsg={msgHandler} />}
+        {selectedFrd && <SplitBill selectedFrds={selectedFrd} onMsg={msgHandler} key={selectedFrd.id} />}
       </div>
 
     </>
